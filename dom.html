@@ -34,7 +34,16 @@
     </main>
 
     <script>
-        console.log(document.body);
+        // console.log(document.body);
+        const blogTitles = document.getElementsByTagName('h1');
+        console.log(blogTitles);
+        for (const h1 of blogTitles) {
+            console.log(h1.innerText);
+        }
+        const blogDetails = document.getElementsByTagName('p');
+        for (const p of blogDetails) {
+            console.log(p.innerText);
+        }
     </script>
 </body>
 
