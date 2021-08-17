@@ -21,24 +21,27 @@
         <h1>DOM</h1>
     </header>
     <main>
-        <article class="blog">
-            <h1>My Blog-1</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta ipsam alias est ea quibusdam ut, quod
-                nihil asperiores eligendi error quas dolores accusamus consequuntur temporibus officiis atque adipisci
-                fugit laboriosam!</p>
-        </article>
-        <article class="blog">
-            <h1 id="second-title">My Blog-2</h1>
-            <p>Incidunt itaque aliquam quis suscipit tempora sapiente, consectetur minus quod laborum maiores labore
-                assumenda omnis, expedita distinctio, nam cum ex harum nesciunt odit rem non debitis dolorum! Nemo,
-                dignissimos reiciendis.</p>
-        </article>
-        <article class="blog">
-            <h1>My Blog-3</h1>
-            <p>Eveniet ipsam non labore ducimus dolorem magni voluptates reiciendis enim sapiente doloribus. Amet
-                voluptate itaque expedita minima consectetur et non illum, officiis atque inventore nisi cumque
-                voluptatem ex assumenda magni?</p>
-        </article>
+        <section class="blogs">
+            <article class="blog">
+                <h1>My Blog-1</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta ipsam alias est ea quibusdam ut, quod
+                    nihil asperiores eligendi error quas dolores accusamus consequuntur temporibus officiis atque
+                    adipisci
+                    fugit laboriosam!</p>
+            </article>
+            <article id="second-blog" class="blog">
+                <h1 id="second-title">My Blog-2</h1>
+                <p>Incidunt itaque aliquam quis suscipit tempora sapiente, consectetur minus quod laborum maiores labore
+                    assumenda omnis, expedita distinctio, nam cum ex harum nesciunt odit rem non debitis dolorum! Nemo,
+                    dignissimos reiciendis.</p>
+            </article>
+            <article class="blog">
+                <h1>My Blog-3</h1>
+                <p>Eveniet ipsam non labore ducimus dolorem magni voluptates reiciendis enim sapiente doloribus. Amet
+                    voluptate itaque expedita minima consectetur et non illum, officiis atque inventore nisi cumque
+                    voluptatem ex assumenda magni?</p>
+            </article>
+        </section>
     </main>
 
     <script>
@@ -68,8 +71,26 @@
         const secondBlog = document.querySelectorAll('.blog p');
         console.log(secondBlog);
         // explore querySelector
+        // querySelector gives only the first element
         const secondBlogP = document.querySelector('.blog p');
         console.log(secondBlogP);
+
+        // explore getAttribute  
+        const secondTitleStyle = secondTitle.getAttribute('style');
+        console.log(secondTitleStyle);
+
+        // explore setAttribute  
+        const secondTitleTitle = secondTitle.setAttribute('title', 'My Blog - 2.0');
+        console.log(secondTitleTitle);
+
+        // explore parentNode 
+        const secondTitleParentNode = secondTitle.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode;
+        console.log(secondTitleParentNode);
+
+        // explore childNodes  
+        const secondBlogChildNodes = document.getElementById('second-blog');
+        console.log(secondBlogChildNodes.childNodes);
+
     </script>
 </body>
 
