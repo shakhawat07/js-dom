@@ -6,6 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DOM</title>
+    <style>
+        /* #second-title {
+            background-color: aqua;
+        } */
+    </style>
 </head>
 
 <body>
@@ -20,7 +25,7 @@
                 fugit laboriosam!</p>
         </article>
         <article>
-            <h1>My Blog-2</h1>
+            <h1 id="second-title">My Blog-2</h1>
             <p>Incidunt itaque aliquam quis suscipit tempora sapiente, consectetur minus quod laborum maiores labore
                 assumenda omnis, expedita distinctio, nam cum ex harum nesciunt odit rem non debitis dolorum! Nemo,
                 dignissimos reiciendis.</p>
@@ -44,6 +49,8 @@
         for (const p of blogDetails) {
             console.log(p.innerText);
         }
+        const secondTitle = document.getElementById('second-title');
+        secondTitle.style.textAlign = 'center';
     </script>
 </body>
 
