@@ -21,7 +21,16 @@
         <h1>DOM</h1>
     </header>
     <main>
-        <section class="blogs">
+        <section id="blog-section" class="blogs">
+            <header>
+                <h2>Blog List</h2>
+                <ul id="blog-list">
+                    <li>Blog-1</li>
+                    <li>Blog-2</li>
+                    <li>Blog-3</li>
+                    <li>Blog-4</li>
+                </ul>
+            </header>
             <article class="blog">
                 <h1>My Blog-1</h1>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta ipsam alias est ea quibusdam ut, quod
@@ -60,13 +69,6 @@
         // explore getElementById 
         const secondTitle = document.getElementById('second-title');
         secondTitle.style.textAlign = 'center';
-        // explore getElementsByClassName
-        const blogs = document.getElementsByClassName('blog');
-        for (const blog of blogs) {
-            blog.style.border = '2px solid black';
-            blog.style.padding = '5px';
-            blog.style.margin = '5px';
-        }
         // explore querySelectorAll
         const secondBlog = document.querySelectorAll('.blog p');
         console.log(secondBlog);
@@ -90,6 +92,40 @@
         // explore childNodes  
         const secondBlogChildNodes = document.getElementById('second-blog');
         console.log(secondBlogChildNodes.childNodes);
+        // explore createElement 
+        const li = document.createElement('li');
+        li.innerText = 'Blog-5';
+        const ul = document.getElementById('blog-list');
+        ul.appendChild(li);
+
+        // add article 
+        const article = document.createElement('article');
+        article.classList.add('blog');
+        const h1 = document.createElement('h1');
+        h1.innerText = 'My Blog-4';
+        const p = document.createElement('p');
+        p.innerText = 'Eveniet ipsam non labore ducimus dolorem magni voluptates reiciendis enim sapiente doloribus.';
+        //add article with innerHTML
+        article.innerHTML = `
+        <h3>My Blog-4.2</h3>
+        <p>Incidunt itaque aliquam quis suscipit tempora sapiente, consectetur minus quod laborum maiores labore
+                    assumenda omnis, expedita distinctio, nam cum ex harum nesciunt odit rem non debitis dolorum! Nemo,
+                    dignissimos reiciendis.</p>
+        `;
+        article.appendChild(h1);
+        article.appendChild(p);
+
+        // parent of article
+        const blogSection = document.getElementById('blog-section');
+        blogSection.appendChild(article);
+
+        // explore getElementsByClassName
+        const blogs = document.getElementsByClassName('blog');
+        for (const blog of blogs) {
+            blog.style.border = '2px solid black';
+            blog.style.padding = '5px';
+            blog.style.margin = '5px';
+        }
 
     </script>
 </body>
