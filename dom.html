@@ -126,7 +126,11 @@
             blog.style.padding = '5px';
             blog.style.margin = '5px';
         }
-
+        //    delete child 
+        const blogListChildren = document.getElementById('blog-list');
+        const third = blogListChildren.children[2];
+        blogListChildren.removeChild(third);
+        console.log(blogListChildren.children);
     </script>
 </body>
 
